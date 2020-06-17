@@ -2,10 +2,6 @@
     <img alt="NextLevelWeek" title="#NextLevelWeek" src="./github-assets/banner.png" />
 </h1>
 
-<h4 align="center"> 
-	🚧 NextLevelWeek 1.0 🚀 🚧
-</h4>
-
 <p align="center">
   <!-- Repo size -->
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/vagner-vengue/Ecoleta?color=2304D361">
@@ -25,13 +21,14 @@
     <a href="https://github.com/vagner-vengue/Ecoleta/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/vagner-vengue/Ecoleta?style=social">
   </a>
-  
-   <!-- Made By -->
+</p>
+
+<p align="center">
+  <!-- Made By -->
   <a href="http://br.linkedin.com/in/vagner-vengue-aa8b5b19">
     <img alt="Made by Vagner Vengue" src="https://img.shields.io/badge/made%20by-vagner--vengue-2304D361">
   </a>
 </p>
-
 
 ## 💻 Sobre o projeto
 
@@ -167,7 +164,14 @@ $ npm run start
 
 Este projeto esta sobe a licença MIT. Veja a [LICENÇA](license) para saber mais.
 
-Por Vagner Vengue, [Entre em contato](https://br.linkedin.com/in/vagner-vengue-aa8b5b19)
+Criado por Vagner Vengue, [Entre em contato](https://br.linkedin.com/in/vagner-vengue-aa8b5b19)
+
+## 🙏🏼 Agradecimentos
+Quero agradecer ao [Rocketseat] ( https://github.com/Rocketseat) por criar e fornecer uma base para este projeto.
+
+<h4 align="center"> 
+	🚧 NextLevelWeek 1.0 🚀 🚧
+</h4>
 
 [nodejs]: https://nodejs.org/
 [typescript]: https://www.typescriptlang.org/
