@@ -16,10 +16,14 @@
     <img alt="Issues" src="https://img.shields.io/github/issues-raw/vagner-vengue/Ecoleta?color=2304D361" />
   </a>
   
-  <!-- License-->
-  <img alt="License" src="https://img.shields.io/github/license/vagner-vengue/Ecoleta?color=2304D361">
-    <a href="https://github.com/vagner-vengue/Ecoleta/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/vagner-vengue/Ecoleta?style=social">
+  <!-- License -->
+  <a href="LICENSE" style="text-decoration: none">
+    <img alt="License" src="https://img.shields.io/github/license/vagner-vengue/Ecoleta?color=2304D361" />
+  </a>
+  
+  <!-- Stars -->
+  <a href="https://github.com/vagner-vengue/Ecoleta/stargazers" style="text-decoration: none" >
+    <img alt="Stars" src="https://img.shields.io/github/license/vagner-vengue/Ecoleta?color=2304D361" />
   </a>
 </p>
 
