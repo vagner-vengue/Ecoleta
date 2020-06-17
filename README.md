@@ -176,7 +176,7 @@ Quero agradecer ao [Rocketseat] (https://github.com/Rocketseat) por criar e forn
 [yarn]: https://yarnpkg.com/
 [vscode]: https://code.visualstudio.com/
 [vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
-[license]: https://opensource.org/licenses/MIT
+[license]: https://github.com/vagner-vengue/Ecoleta/blob/master/LICENSE
 [vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 [prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 [rs]: https://rocketseat.com.br
