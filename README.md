@@ -169,9 +169,6 @@ Criado por Vagner Vengue, [Entre em contato](https://br.linkedin.com/in/vagner-v
 ## 🙏🏼 Agradecimentos
 Quero agradecer ao [Rocketseat] ( https://github.com/Rocketseat) por criar e fornecer uma base para este projeto.
 
-<h4 align="left"> 
-	🚧 NextLevelWeek 1.0 🚀 🚧
-</h4>
 
 [nodejs]: https://nodejs.org/
 [typescript]: https://www.typescriptlang.org/
