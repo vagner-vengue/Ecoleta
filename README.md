@@ -2,31 +2,37 @@
     <img alt="NextLevelWeek" title="#NextLevelWeek" src="./github-assets/banner.png" />
 </h1>
 
-<h4 align="center"> 
-	🚧 NextLevelWeek 1.0 🚀 em construção... 🚧
-</h4>
-
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/leon-carvalho/Ecoleta?color=%2304D361">
+  <!-- Repo size -->
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/vagner-vengue/Ecoleta?color=2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/leon-carvalho/Ecoleta">
-
-  	
-  <a href="https://www.linkedin.com/in/leonardo-dev/">
-    <img alt="Made by leon-carvalho" src="https://img.shields.io/badge/made%20by-leon--carvalho-%2304D361">
+  <!-- Last commit-->
+  <a href="https://github.com/vagner-vengue/Ecoleta/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/go-mod/go-version/vagner-vengue/Ecoleta/master?color=2304D361&label=last%20commit">
   </a>
-	
   
-  <a href="https://github.com/leon-carvalho/Ecoleta/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/leon-carvalho/Ecoleta">
+  <!-- Issues-->
+  <a href="https://github.com/vagner-vengue/ecoleta/issues" style="text-decoration: none">
+    <img alt="Issues" src="https://img.shields.io/github/issues-raw/vagner-vengue/Ecoleta?color=2304D361" />
   </a>
-
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/leon-carvalho/Ecoleta/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/leon-carvalho/Ecoleta?style=social">
+  
+  <!-- License -->
+  <a href="LICENSE" style="text-decoration: none">
+    <img alt="License" src="https://img.shields.io/github/license/vagner-vengue/Ecoleta?color=2304D361" />
+  </a>
+  
+  <!-- Stars -->
+  <a href="https://github.com/vagner-vengue/Ecoleta/stargazers" style="text-decoration: none" >
+    <img alt="Stars" src="https://img.shields.io/github/stars/vagner-vengue/Ecoleta?style=social" />
   </a>
 </p>
 
+<p align="center">
+  <!-- Made By -->
+  <a href="http://br.linkedin.com/in/vagner-vengue-aa8b5b19">
+    <img alt="Made by Vagner Vengue" src="https://img.shields.io/badge/made%20by-vagner--vengue-2304D361">
+  </a>
+</p>
 
 ## 💻 Sobre o projeto
 
@@ -107,7 +113,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode][vsco
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/leon-carvalho/Ecoleta
+$ git clone https://github.com/vagner-vengue/Ecoleta
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd Ecoleta
@@ -128,7 +134,7 @@ $ npm run dev:server
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/leon-carvalho/Ecoleta
+$ git clone https://github.com/vagner-vengue/Ecoleta
 
 # Acesse a pasta do projeto no seu terminal/cmd
 $ cd Ecoleta
@@ -162,7 +168,14 @@ $ npm run start
 
 Este projeto esta sobe a licença MIT. Veja a [LICENÇA](license) para saber mais.
 
-Feito com ❤️ por Leonardo Carvalho 👋🏽 [Entre em contato!](https://www.linkedin.com/in/leonardo-dev/)
+Criado por Vagner Vengue, [Entre em contato](https://br.linkedin.com/in/vagner-vengue-aa8b5b19)
+
+## 🙏🏼 Agradecimentos
+Quero agradecer ao [Rocketseat] (https://github.com/Rocketseat) por criar e fornecer uma base para este projeto.
+
+<h4 align="left"> 
+	🚧 NextLevelWeek 1.0 🚀 🚧
+</h4>
 
 [nodejs]: https://nodejs.org/
 [typescript]: https://www.typescriptlang.org/
@@ -176,3 +189,4 @@ Feito com ❤️ por Leonardo Carvalho 👋🏽 [Entre em contato!](https://www.
 [vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 [prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 [rs]: https://rocketseat.com.br
+[Rocketseat]: https://rocketseat.com.br
