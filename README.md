@@ -167,7 +167,7 @@ $ npm run start
 
 Este projeto esta sobe a licença MIT. Veja a [LICENÇA](license) para saber mais.
 
-Por Vagner Vengue, (https://br.linkedin.com/in/vagner-vengue-aa8b5b19)
+Por Vagner Vengue, [Entre em contato](https://br.linkedin.com/in/vagner-vengue-aa8b5b19)
 
 [nodejs]: https://nodejs.org/
 [typescript]: https://www.typescriptlang.org/
