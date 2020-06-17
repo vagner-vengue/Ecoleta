@@ -3,27 +3,32 @@
 </h1>
 
 <h4 align="center"> 
-	🚧 NextLevelWeek 1.0 🚀 em construção... 🚧
+	🚧 NextLevelWeek 1.0 🚀 🚧
 </h4>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/leon-carvalho/Ecoleta?color=%2304D361">
+  <!-- Repo size -->
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/vagner-vengue/Ecoleta?color=2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/leon-carvalho/Ecoleta">
-
-  	
-  <a href="https://www.linkedin.com/in/leonardo-dev/">
-    <img alt="Made by leon-carvalho" src="https://img.shields.io/badge/made%20by-leon--carvalho-%2304D361">
+  <!-- Last commit-->
+  <a href="https://github.com/vagner-vengue/Ecoleta/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/go-mod/go-version/vagner-vengue/Ecoleta/master?color=2304D361&label=last%20commit">
   </a>
-	
   
-  <a href="https://github.com/leon-carvalho/Ecoleta/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/leon-carvalho/Ecoleta">
+  <!-- Issues-->
+  <a href="https://github.com/vagner-vengue/ecoleta/issues" style="text-decoration: none">
+    <img alt="Issues" src="https://img.shields.io/github/issues-raw/vagner-vengue/Ecoleta?color=2304D361" />
   </a>
-
+  
+  <!-- License-->
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/leon-carvalho/Ecoleta/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/leon-carvalho/Ecoleta?style=social">
+    <a href="https://github.com/vagner-vengue/Ecoleta/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/vagner-vengue/Ecoleta?style=social">
+  </a>
+  
+   <!-- Made By -->
+  <a href="http://br.linkedin.com/in/vagner-vengue-aa8b5b19">
+    <img alt="Made by Vagner Vengue" src="https://img.shields.io/badge/made%20by-vagner--vengue-2304D361">
   </a>
 </p>
 
