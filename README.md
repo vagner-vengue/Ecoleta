@@ -167,8 +167,11 @@ Este projeto esta sobe a licença MIT. Veja a [LICENÇA](license) para saber mai
 Criado por Vagner Vengue, [Entre em contato](https://br.linkedin.com/in/vagner-vengue-aa8b5b19)
 
 ## 🙏🏼 Agradecimentos
-Quero agradecer ao [Rocketseat] ( https://github.com/Rocketseat) por criar e fornecer uma base para este projeto.
+Quero agradecer ao [Rocketseat] (https://github.com/Rocketseat) por criar e fornecer uma base para este projeto.
 
+<h4 align="left"> 
+	🚧 NextLevelWeek 1.0 🚀 🚧
+</h4>
 
 [nodejs]: https://nodejs.org/
 [typescript]: https://www.typescriptlang.org/
@@ -182,3 +185,4 @@ Quero agradecer ao [Rocketseat] ( https://github.com/Rocketseat) por criar e for
 [vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 [prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 [rs]: https://rocketseat.com.br
+[Rocketseat]: https://rocketseat.com.br
