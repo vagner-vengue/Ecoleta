@@ -17,7 +17,7 @@
   </a>
   
   <!-- License-->
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+  <img alt="License" src="https://img.shields.io/github/license/vagner-vengue/Ecoleta?color=2304D361">
     <a href="https://github.com/vagner-vengue/Ecoleta/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/vagner-vengue/Ecoleta?style=social">
   </a>
