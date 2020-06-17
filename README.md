@@ -23,7 +23,7 @@
   
   <!-- Stars -->
   <a href="https://github.com/vagner-vengue/Ecoleta/stargazers" style="text-decoration: none" >
-    <img alt="Stars" src="https://img.shields.io/github/license/vagner-vengue/Ecoleta?color=2304D361" />
+    <img alt="Stars" src="https://img.shields.io/github/stars/vagner-vengue/Ecoleta?style=social" />
   </a>
 </p>
 
