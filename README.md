@@ -58,15 +58,6 @@ Projeto desenvolvido durante a **NLW - Next Level Week** oferecida pela [Rockets
 O NLW é uma experiência online com muito conteúdo prático, desafios e hacks onde o conteúdo fica disponível durante uma semana.
 
 
-## 🎨 Layout
-
-O layout da aplicação está disponível no Figma:
-
-<a href="https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/Ecoleta?node-id=136%3A546">
-  <img alt="Made by leon-carvalho" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
-</a>
-
-
 ### Mobile
 
 <p align="center">
@@ -185,7 +176,7 @@ Quero agradecer ao [Rocketseat] (https://github.com/Rocketseat) por criar e forn
 [yarn]: https://yarnpkg.com/
 [vscode]: https://code.visualstudio.com/
 [vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
-[license]: https://opensource.org/licenses/MIT
+[license]: https://github.com/vagner-vengue/Ecoleta/blob/master/LICENSE
 [vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 [prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 [rs]: https://rocketseat.com.br
