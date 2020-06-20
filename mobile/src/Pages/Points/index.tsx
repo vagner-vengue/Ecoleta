@@ -40,6 +40,7 @@ const Points = () => {
 
     const routeParams = route.params as Params;
 
+    // This loads the initial position to be used on the map.
     useEffect(() => {
         async function loadPosition(){
             const { status } = await Location.requestPermissionsAsync();
@@ -58,12 +59,14 @@ const Points = () => {
         loadPosition();
     }, []);
 
+    // This loads the item types, which are showed on the footer.
     useEffect(() => {
         api.get('items').then(response => {
             setItems(response.data);
         });
     }, []);
 
+    // This loads the points to be showed on the map. It is executed every time 'selectedItems' changes.
     useEffect(() => {
         api.get('points', {
             params: {
@@ -74,8 +77,8 @@ const Points = () => {
         }).then(response => {
             setPoints(response.data);
         });
-    }, [selectedItems]);    /// AQUI está o pulo do gato, cada vez que o usuário mudar a seleção de items, os pontos são carregados novamente, atualizando o mapa.
-
+    }, [selectedItems]);
+    
     function handleNavigationBack() {
         navigation.goBack();
     }
@@ -85,7 +88,7 @@ const Points = () => {
     }
 
     function handleSelectedItem(id: number){
-        // findIndex retornará -1 se o item não for encontrado.
+        // findInded returns -1 if the item is not found.
         const alreadySelected = selectedItems.findIndex(i => i === id);
 
         if (alreadySelected >= 0) {
@@ -106,9 +109,9 @@ const Points = () => {
                 <Text style={styles.title}>Bem vindo.</Text>
                 <Text style={styles.description}>Encontre no mapa um ponto de coleta.</Text>
 
-                {/* borderRadius só funciona com views. Mas tive que comentar o "flex: 1" aqui. */}
+                {/* The view was added arround the map specially because of borderRadius style. */}
                 <View style={styles.mapContainer}>
-                    {/* O mapa só pode ser renderizado quando a posição inicial for diferente de zero. */}
+                    {/* The map is only rendered when the initial position is different from zero. */}
                     { initialPosition[0] !== 0 && (
                         <MapView 
                             style={styles.map}
@@ -145,7 +148,7 @@ const Points = () => {
                 <ScrollView 
                     horizontal 
                     showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={{ paddingHorizontal: 20 }}  // {{}} o primeiro é para código JS, o sengundo representa um objeto. 
+                    contentContainerStyle={{ paddingHorizontal: 20 }}  // {{}} The first is for JS code. The second represents an object.
                 >
                     {
                         items.map(item => (

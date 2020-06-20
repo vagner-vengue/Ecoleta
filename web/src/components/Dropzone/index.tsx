@@ -8,13 +8,11 @@ interface Props {
     onFileUploaded: (file: File) => void;
 }
 
-// const DropZone = () => {
-// O parâmetro ( {onFileUploaded} ) indica que só queremos a propriedade com o ponteiro da função, ao invés de (props).
 const DropZone: React.FC<Props> = ( {onFileUploaded} ) => {
     const [selectedFileURL, setSelectedFileURL] = useState('');
     
     const onDrop = useCallback(acceptedFiles => {
-        const file = acceptedFiles[0];  // Poderiam ser multiplus
+        const file = acceptedFiles[0];  // It is an array, since multiple files could be uploaded.
     
         const fileURL = URL.createObjectURL(file);
         setSelectedFileURL(fileURL);

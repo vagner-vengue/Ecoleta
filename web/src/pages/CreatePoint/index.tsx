@@ -1,7 +1,7 @@
 import React, {useState, useEffect, ChangeEvent, FormEvent} from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
-import { Map, TileLayer, Marker } from "react-leaflet";   // TileLayer é o estido do mapa.
+import { Map, TileLayer, Marker } from "react-leaflet";   // TileLayer is the map style.
 import { LeafletMouseEvent } from 'leaflet';
 import api from '../../services/api';
 import axios from 'axios';
@@ -10,7 +10,6 @@ import DropZone from "../../components/Dropzone";
 import './styles.css';
 import logo from '../../assets/logo.svg';
 
-// State de array ou objeto: manualmente informar o tipo da variável, através de uma interface
 interface Item {
     id: number;
     title: string;
@@ -46,6 +45,7 @@ const CreatePoint = () => {
 
     const history = useHistory();
 
+    // Loads the item types to be showed on the screen.
     useEffect(() => {
         api.get('items').then(
             response => {
@@ -54,6 +54,7 @@ const CreatePoint = () => {
         );
     }, []);
 
+    // Loads the states from IBGE, government institute.
     useEffect(() => {
         axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
             const ufInitials = response.data.map(uf => uf.sigla);
@@ -61,7 +62,7 @@ const CreatePoint = () => {
         });
     }, []);
 
-    // Muda os municípios cada vez que a UF selecionada mudar.
+    // Loads the cities from IBGE (government institute). It reloads every time the selected state changes.
     useEffect(() => {
         if (selectedUF === '0')
             return;
@@ -73,6 +74,7 @@ const CreatePoint = () => {
         });
     }, [selectedUF]);
 
+    // Gets the initial position from the browser.
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(pos => {
             const { latitude, longitude } = pos.coords;
@@ -95,17 +97,17 @@ const CreatePoint = () => {
     }
     
     function handleInputChange(event: ChangeEvent<HTMLInputElement>){
-        // event.target retorna exatamente o elemento html que disparou o evento.
+        // event.target returns the exact html element that triggered the event.
         const { name, value } = event.target;
 
-        // No código abaixo, o 'spread operator' retorna os dados atuais o formData.
-        // E [] serve para a utilização de uma variável, que será o nome do elemento html
-        // E o nome da propriedade de formData é o mesmo nome dos elementos html.
+        // On the below code, the 'spread operator' returns the current data from fromData.
+        // [] is used to set a property of formData.
+        // And the the formData property name is the same of the html element property.
         setFormData({ ...formData, [name]: value});
     }
 
     function handleSelectedItem(id: number){
-        // findIndex retornará -1 se o item não for encontrado.
+        // findIndex returns -1 if the item is not found.
         const alreadySelected = selectedItems.findIndex(i => i === id);
 
         if (alreadySelected >= 0) {
@@ -117,7 +119,7 @@ const CreatePoint = () => {
     }
 
     async function handleSubmit(event: FormEvent){
-        // Evita que o site seja direcionado para uma página de default error.
+        // Prevents that the user is redirected to a default error page.
         event.preventDefault();
 
         const { name, email, whatsapp } = formData;
@@ -136,8 +138,8 @@ const CreatePoint = () => {
         //     longitude,
         //     items};
 
-        // FormData é utilizado para poder enviar uma solicitação do tipo Multipart, ao invés de JSON.
-        // Se não fosse pelo arquivo, poderia ser só um "api.post('points', data);"
+        // FormData is used to allow Multipart requests, instead of a simple JSON body request.
+        // If there wasn't a file, we could use just a "api.post('points', data);"
         const data = new FormData();
 
         data.append('name', name);
@@ -158,7 +160,7 @@ const CreatePoint = () => {
 
         alert('Ponto de coleta criado!');
 
-        // Retorna para o diretório raíz.
+        // Redirects to the root directory.
         history.push('/');
     }
 
@@ -177,16 +179,16 @@ const CreatePoint = () => {
             <form onSubmit={handleSubmit}>
                 <h1>Cadastro do <br /> ponto de coleta</h1>
 
-                {/* Drop de arquivos */}
+                {/* Files drop zone */}
                 <DropZone onFileUploaded={setSelectedFile} />
 
-                {/* Fielset Dados */}
+                {/* Fielset: "Dados" */}
                 <fieldset>
                     <legend>
                         <h2>Dados</h2>
                     </legend>
 
-                    {/* Campo Nome */}
+                    {/* Field: "Name" */}
                     <div className="field">
                         <label htmlFor="name">Nome da entidade</label>
                         <input 
@@ -197,7 +199,7 @@ const CreatePoint = () => {
                     </div>
 
                     <div className="field-group">
-                        {/* Campo E-mail */}
+                        {/* Field: "E-mail" */}
                         <div className="field">
                             <label htmlFor="email">E-mail</label>
                             <input 
@@ -207,7 +209,7 @@ const CreatePoint = () => {
                                 onChange={handleInputChange} />
                         </div>
 
-                        {/* Campo Whatsapp */}
+                        {/* Field: "Whatsapp" */}
                         <div className="field">
                             <label htmlFor="whatsapp">Whatsapp</label>
                             <input 
@@ -219,14 +221,14 @@ const CreatePoint = () => {
                     </div>
                 </fieldset>
 
-                {/* Fieldset Endereço */}
+                {/* Fieldset: "Endereço" */}
                 <fieldset>
                     <legend>
                         <h2>Endereço</h2>
                         <span>Selecione o endereço no mapa</span>
                     </legend>
 
-                    {/* MAPA */}
+                    {/* Map */}
                     <Map center={initialPosition} zoom={15} onClick={handleMapClick}>
                         <TileLayer
                             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -258,7 +260,7 @@ const CreatePoint = () => {
                     </div>
                 </fieldset>
 
-                {/* Fieldset ítens de coleta */}
+                {/* Fieldset: "Ítens de coleta" */}
                 <fieldset>
                     <legend>
                         <h2>Ítens de coleta</h2>
@@ -272,7 +274,7 @@ const CreatePoint = () => {
                                 onClick={() => handleSelectedItem(item.id)}
                                 className={ selectedItems.includes(item.id) ? 'selected' : '' }
                             >
-                                {/* Para onClick com parâmetro é necessário utilizar esta sintaxe "() => " */}
+                                {/* For onClick with parameters, it is necessary to use the syntax: "() => " */}
                                 <img src={item.image_url} alt={item.title}/>
                                 <span>{item.title}</span>
                             </li>

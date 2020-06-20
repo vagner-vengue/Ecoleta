@@ -1,6 +1,6 @@
 import Knex from 'knex';
 
-// Este arquivo deve exportar duas funções: "up" and "down".
+// On this file, it's mandatory to have two exported functions: "up" and "down".
 
 export async function up(knex: Knex){
     return knex.schema.createTable('points', table => {

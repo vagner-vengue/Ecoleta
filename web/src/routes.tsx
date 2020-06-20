@@ -7,7 +7,7 @@ import CreatePoint from './pages/CreatePoint';
 const Routes = () => {
     return(
         <BrowserRouter>
-            {/* Se não usar a propriedade 'exact', as duas rotas vão para a página principal.  */}
+            {/* If the 'exact' property is not used, all the routes will direct to the home page */}
             <Route component={Home} path="/" exact={true} />
             <Route component={CreatePoint} path="/create-point" />
         </BrowserRouter>

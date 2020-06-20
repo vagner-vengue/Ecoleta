@@ -1,8 +1,9 @@
-import { Request, Response, request } from "express";
+import { Request, Response } from "express";
 import Knex from "../database/connection";
 
 class PointsController {
 
+    // Returns the list of points, based on the query parameters.
     async index(request: Request, response: Response){
         const { city, uf, items } = request.query;
 
@@ -29,6 +30,7 @@ class PointsController {
         response.json( serializedPoints );
     }
 
+    // Returns details of a specific point
     async show(request: Request, response: Response) {
         const { id } = request.params;
 
@@ -52,9 +54,8 @@ class PointsController {
     }
     
     async create(request: Request, response: Response){
-        // ** No POST: deve ter no header "Content-Type: application/json"  */
+        // On the POST request header there should be: "Content-Type: application/json".
 
-        // Estrutura Javascript
         const {
             name,
             email,
@@ -66,8 +67,8 @@ class PointsController {
             items
         } = request.body;
 
-        // Imagem é campo obrigatório.
-        // Short syntax, poderia ser name: name
+        // JS short syntax was used here, but image file does not come with request body.
+        // The image comes from the file attribute.
         const newPoint = {
             image: request.file.filename,
             name,
@@ -87,13 +88,6 @@ class PointsController {
         try {
             const insertedIds = await trx('points').insert(newPoint);
             point_id = insertedIds[0];
-
-            // const pointItems = items.map((item_id: number) => {
-            //     return {
-            //         item_id,
-            //         point_id
-            //     };
-            // });
 
             const pointItems = items
                 .split(',')
@@ -115,6 +109,7 @@ class PointsController {
             console.log('Error:' + error);
         }
         
+        // If point was created with success, this funtion returns an object with the new poins + point id.
         return response.json(
             trxCompleted?
             { id: point_id, ...newPoint } :

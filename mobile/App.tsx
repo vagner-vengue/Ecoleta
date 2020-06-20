@@ -21,10 +21,9 @@ export default function App() {
   
   return(
     <>
+      {/* BackgroundColor and translucent only work with Android. Translucent allows the screen to also appear behind the status bar. */}
       <StatusBar barStyle="dark-content" backgroundColor="transparent" translucent />
       <Routes />
     </>
   );
 }
-
-// backgroundColor e translucent só functionam no Android. Translucent permite que a tela apareça por trás da status bar.

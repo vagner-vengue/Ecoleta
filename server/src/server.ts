@@ -1,24 +1,25 @@
 import express, { request } from 'express';
 import cors from 'cors';
 import path from 'path';
-import routes from './routes'; // importa o arquivo com as rotas, criado por mim.
+import routes from './routes';
 import { errors } from 'celebrate';
 
 const app = express();
 
-// Usado para permitir que a aplicação ReactJS possa acessar o servidor
+// This allows the ReactJS application domain to access the server. Specific domains could be set if needed.
 app.use(cors());
 
-// Define o tipo de formato que será utilizado para 'Request Body' (GET).
+// Defines the 'Request Body' format to be used. (GET)
 app.use(express.json());
 
-// Adiciona as rotas ao servidor.
+// Adds the routes to the server.
 app.use(routes);
 
-// Adiciona uma rota estática ao servidor. Tudo o que está neste diretório ficará acessível com GET. O '..' volta um diretório.
+// Adds a static route on the server for 'uploads' folder. Everything on the folder will be acessible for GET requests.
 app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 
-// Para validação dos dados.
+// Used for data validation.
 app.use(errors());
 
-app.listen(3333); /// Door to listen
+// Door to listen
+app.listen(3333);

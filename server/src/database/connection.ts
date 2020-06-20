@@ -1,10 +1,11 @@
-import knex from 'knex';
-import path from 'path';  //Biblioteca padrão do Node.
+import knex from 'knex';  // Installed lib.
+import path from 'path';  // Standard lib from Node.
 
 const connection = knex({
     client: 'sqlite3',
     connection: {
-        filename: path.resolve(__dirname, 'database.sqlite'),  // Adiciona barra. O __dirname é o diretório do arquivo sendo executado.
+        // Resolve function adds the backslash. And __dirname is the current directory, where this file is.
+        filename: path.resolve(__dirname, 'database.sqlite'),
     },
     useNullAsDefault: true,
 });

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Image, ImageBackground, Text, KeyboardAvoidingView, Platform, TextInput, Alert } from "react-native";
+import { StyleSheet, View, Image, ImageBackground, Text, KeyboardAvoidingView, Platform, Alert } from "react-native";
 import { Feather as Icon, Ionicons } from '@expo/vector-icons';
-import { RectButton } from "react-native-gesture-handler";  // Botão do react-navigation que se adapta de acordo com a plataforma.
+import { RectButton } from "react-native-gesture-handler";  // This button adapts according to the platform.
 import RNPickerSelect from 'react-native-picker-select';
 import axios from 'axios';
 import { useNavigation } from "@react-navigation/native";
@@ -42,7 +42,7 @@ const Home = () => {
         });
     }, []);
     
-    // Muda os municípios cada vez que a UF selecionada mudar.
+    // Executed every time the state 'selectedUF' changes.
     useEffect(() => {
       if (selectedUF === '0')
           return;
@@ -58,8 +58,8 @@ const Home = () => {
       <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios'? 'padding' : undefined }>
         <ImageBackground 
             source={require('../../assets/home-background.png')}
-            style={styles.container}  // Estilo da view.
-            imageStyle={{ width: 274, height: 368 }}  // Estilo da imagem.
+            style={styles.container}  // Property of view style.
+            imageStyle={{ width: 274, height: 368 }}  // Property of image style.
         >
             <View style={styles.main}>
                 <Image source={require('../../assets/logo.png')} />
@@ -71,6 +71,7 @@ const Home = () => {
 
             <View style={styles.footer}>
 
+                {/* Field: UF */}
                 <RNPickerSelect
                   placeholder={{label: 'Selecione uma UF' }}
                   value={selectedUF}
@@ -86,6 +87,7 @@ const Home = () => {
                   }}      
                 />
 
+                {/* Field: City */}
                 <RNPickerSelect
                   placeholder={{label: 'Selecione uma cidade' }}
                   value={selectedCity}
@@ -101,6 +103,7 @@ const Home = () => {
                   }}      
                 />
 
+                {/* Button: Enter */}
                 <RectButton style={styles.button} onPress={handleNavigationToPoints}>
                     <View style={styles.buttonIcon}>
                         <Text>
@@ -195,7 +198,7 @@ const pickerSelectStyles = StyleSheet.create({
     borderRadius: 8,
     borderColor: 'purple',
     color: 'black',
-    paddingRight: 10, // to ensure the text is never behind the icon
+    paddingRight: 10, // This is to ensure the text is never behind the icon.
   },
   inputAndroid: {
     height: 60,
@@ -207,7 +210,7 @@ const pickerSelectStyles = StyleSheet.create({
     borderRadius: 10,
     borderColor: 'purple',
     color: 'black',
-    paddingRight: 10, // to ensure the text is never behind the icon
+    paddingRight: 10, // This is to ensure the text is never behind the icon.
   },
   iconContainer: {
     top: 15,

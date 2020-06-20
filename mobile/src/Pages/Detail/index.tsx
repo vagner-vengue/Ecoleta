@@ -46,24 +46,24 @@ const Detail = () => {
 
     function handleComposeEmail(){
         MailComposer.composeAsync({
-            subject: 'Interesse na coleta de resíduos.',
+            subject: 'Interesse em coleta de resíduos.',
             recipients: [data.point.email],
-            body: 'body.'
+            body: 'Olá! Tenho interesse em coleta de resíduos.'
         });
     }
 
     function handleWhatsapp(){
-        Linking.openURL(`whatsapp://send?phone=${data.point.whatsapp}&text=Tenho interesse sobre coleta de resíduos.`);
+        Linking.openURL(`whatsapp://send?phone=${data.point.whatsapp}&text=Olá! Tenho interesse em coleta de resíduos.`);
     }
 
-    // O correto seria ter uma tela de loading.
+    // Temporary solution. A loading screen should be created later.
     if (!data.point) {
         return null;
     }
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            {/* Container com details */}
+            {/* Container with details */}
             <View style={styles.container}>
                 <TouchableOpacity onPress={(handleNavigationBack)}>
                     <Icon name='arrow-left' size={20} color="#34cb79" />
@@ -80,7 +80,7 @@ const Detail = () => {
                 </View>
             </View>
 
-            {/* Container com botões no rodapé. */}
+            {/* Container with buttons on the footer. */}
             <View style={styles.footer}>
                 <RectButton style={styles.button} onPress={handleWhatsapp} >
                     <FontAwesome name='whatsapp' size={20} color="#FFF" />
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 32,
-        paddingTop: Platform.OS === 'ios' ? 20 : 20 + Constants.statusBarHeight,  // Constants.statusBarHeight não é mais necessário devido à SafeAreaView. Mas parece que o Android não funciona.
+        paddingTop: Platform.OS === 'ios' ? 20 : 20 + Constants.statusBarHeight,  // On IOS only SafeAreaView is enough.
     },
 
     pointImage: {
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
         borderColor: '#999',
         paddingVertical: 20,
         paddingHorizontal: 32,
-        paddingBottom: Platform.OS === 'ios' ? 0 : 20,  // No IOS o padding é feito pelo SafeAreaView.
+        paddingBottom: Platform.OS === 'ios' ? 0 : 20,  // On IOS only SafeAreaView is enough.
         flexDirection: 'row',
         justifyContent: 'space-between'
     },

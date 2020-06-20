@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiLogIn } from 'react-icons/fi';
-import { Link } from 'react-router-dom';   // Usado para o SPA (Single Page Application). Deste maneira a página não recarrega.
+import { Link } from 'react-router-dom';   // Used for SPA (Single Page Application). This way the page is not reloaded.
 
 import './styles.css';
 
