@@ -163,6 +163,7 @@ Criado por Vagner Vengue, [Entre em contato](https://br.linkedin.com/in/vagner-v
 
 ## 🙏🏼 Agradecimentos
 Quero agradecer a [Rocketseat] (https://github.com/Rocketseat) por criar e fornecer uma base para este projeto.
+
 Este projeto foi desenvolvido durante a semana "NextLevelWeek 1.0", com o objetivo de estudos sobre tecnologias modernas de desenvolvimento de aplicativos multiplataformas para celulares.
 
 <h4 align="left"> 
