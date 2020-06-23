@@ -8,7 +8,7 @@
 
   <!-- Last commit-->
   <a href="https://github.com/vagner-vengue/Ecoleta/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/go-mod/go-version/vagner-vengue/Ecoleta/master?color=2304D361&label=last%20commit">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/vagner-vengue/Ecoleta">
   </a>
   
   <!-- Issues-->
@@ -18,7 +18,7 @@
   
   <!-- License -->
   <a href="LICENSE" style="text-decoration: none">
-    <img alt="License" src="https://img.shields.io/github/license/vagner-vengue/Ecoleta?color=2304D361" />
+    <img alt="License" src="https://img.shields.io/github/license/vagner-vengue/Ecoleta" />
   </a>
   
   <!-- Stars -->
