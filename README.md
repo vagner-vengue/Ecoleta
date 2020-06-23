@@ -116,7 +116,7 @@ $ cd server
 $ npm install
 
 # Execute a aplicação em modo de desenvolvimento
-$ npm run dev:server
+$ npm run dev
 
 # O servidor inciará na porta:3333 - acesse http://localhost:3333 
 ```
@@ -137,7 +137,7 @@ $ cd web
 $ npm install
 
 # Execute a aplicação em modo de desenvolvimento
-$ npm run start
+$ npm start
 
 # A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 ```
@@ -162,7 +162,9 @@ Este projeto esta sobe a licença MIT. Veja a [LICENÇA](license) para saber mai
 Criado por Vagner Vengue, [Entre em contato](https://br.linkedin.com/in/vagner-vengue-aa8b5b19)
 
 ## 🙏🏼 Agradecimentos
-Quero agradecer ao [Rocketseat] (https://github.com/Rocketseat) por criar e fornecer uma base para este projeto.
+Quero agradecer a [Rocketseat] (https://github.com/Rocketseat) por criar e fornecer uma base para este projeto.
+
+Este projeto foi desenvolvido durante a semana "NextLevelWeek 1.0", com o objetivo de estudos sobre tecnologias modernas de desenvolvimento de aplicativos multiplataformas para celulares.
 
 <h4 align="left"> 
 	🚧 NextLevelWeek 1.0 🚀 🚧
