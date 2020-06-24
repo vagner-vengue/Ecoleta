@@ -18,7 +18,7 @@
   
   <!-- License -->
   <a href="LICENSE" style="text-decoration: none">
-    <img alt="License" src="https://img.shields.io/github/license/vagner-vengue/Ecoleta" />
+    <img alt="License" src="https://img.shields.io/github/license/vagnervengue/Ecoleta" />
   </a>
   
   <!-- Stars -->
