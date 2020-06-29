@@ -9,7 +9,7 @@ class ItemsController {
             return {
                 id: item.id,
                 title: item.title,
-                image_url: `http://192.168.15.5:3333/uploads/${item.image}`,  // IP of your API server, with door 3333.
+                image_url: process.env.SERVER_URL + 'uploads/' + item.image,
             };
         });
         

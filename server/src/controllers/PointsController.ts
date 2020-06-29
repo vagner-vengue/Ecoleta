@@ -21,12 +21,12 @@ class PointsController {
             return(
                 {
                     ...p,
-                    image_url: `http://192.168.15.5:3333/uploads/${p.image}`,
+                    image_url: process.env.SERVER_URL + 'uploads/' + p.image,
                 }
             )
         });
 
-        console.log('http://192.168.15.5:3333/uploads');
+        console.log(process.env.SERVER_URL + 'uploads/');
         response.json( serializedPoints );
     }
 
@@ -42,7 +42,7 @@ class PointsController {
 
         const serializedPoint = {
             ...point,
-            image_url: `http://192.168.15.5:3333/uploads/${point.image}`,
+            image_url: process.env.SERVER_URL + 'uploads/' + point.image,
         };
 
         const items = await Knex('items')

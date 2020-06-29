@@ -1,8 +1,12 @@
+import dotenv from 'dotenv';
 import express, { request } from 'express';
 import cors from 'cors';
 import path from 'path';
 import routes from './routes';
 import { errors } from 'celebrate';
+
+// Initializes the component for environment variables. 
+dotenv.config();
 
 const app = express();
 
@@ -22,4 +26,4 @@ app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 app.use(errors());
 
 // Door to listen
-app.listen(3333);
+app.listen(process.env.SERVER_PORT);
