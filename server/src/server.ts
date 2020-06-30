@@ -26,4 +26,6 @@ app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 app.use(errors());
 
 // Door to listen
-app.listen(process.env.SERVER_PORT);
+app.listen(process.env.PORT);
+
+console.log('Server running.');
