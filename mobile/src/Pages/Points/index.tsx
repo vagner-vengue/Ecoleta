@@ -7,6 +7,7 @@ import MapView, { Marker } from "react-native-maps";
 import { SvgUri } from "react-native-svg";
 import * as Location from "expo-location";
 import api from "../../services/api";
+import { getHeaderPublicAccess, getHeaderPublicAccessPropertyOnly } from "../../global/global_functions";
 
 interface Item {
     id: number;
@@ -32,7 +33,7 @@ const Points = () => {
     
     const [items, setItems] = useState<Item[]>([]);
     const [points, setPoints] = useState<Point[]>([]);
-    const [selectedItems, setSelectedItems] = useState<number[]>([]);
+    const [selectedItems, setSelectedItems] = useState<number[]>([0]);
     const [initialPosition, setInitialPosition] = useState<[number, number]>([0, 0]);
 
     const navigation = useNavigation();
@@ -61,7 +62,7 @@ const Points = () => {
 
     // This loads the item types, which are showed on the footer.
     useEffect(() => {
-        api.get('items').then(response => {
+        api.get('items', getHeaderPublicAccess()).then(response => {
             setItems(response.data);
         });
     }, []);
@@ -69,6 +70,7 @@ const Points = () => {
     // This loads the points to be showed on the map. It is executed every time 'selectedItems' changes.
     useEffect(() => {
         api.get('points', {
+            headers: getHeaderPublicAccessPropertyOnly(),
             params: {
                 city: routeParams.city,
                 uf: routeParams.uf,
@@ -129,8 +131,8 @@ const Points = () => {
                                     style={styles.mapMarker}
                                     onPress={() => handleNavigationToDetail(point.id)}
                                     coordinate={{
-                                        latitude: point.latitude,
-                                        longitude: point.longitude,
+                                        latitude: Number(point.latitude),
+                                        longitude: Number(point.longitude),
                                 }}>
                                     <View style={styles.mapMarkerContainer}>
                                         <Image

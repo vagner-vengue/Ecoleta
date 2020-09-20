@@ -5,6 +5,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import Constants from "expo-constants";
 import { RectButton } from "react-native-gesture-handler";
 import api from "../../services/api";
+import { getHeaderPublicAccess } from "../../global/global_functions";
 import * as MailComposer from "expo-mail-composer";
 
 interface Params {
@@ -35,7 +36,7 @@ const Detail = () => {
     const routeParams = route.params as Params;
 
     useEffect(() => {
-        api.get(`points/${routeParams.point_id}`).then(response => {
+        api.get(`points/${routeParams.point_id}`, getHeaderPublicAccess()).then(response => {
             setData(response.data);
         });
     }, []);

@@ -1,28 +1,41 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "Ecoleta",
+    "icon": "./src/assets/mobile_icon.png", 
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "slug": "Ecoleta",
+
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+
+    "ios": {
+      "bundleIdentifier": "com.vagnercpp.ecoleta",
+      "buildNumber": "1.0.0",
+      "supportsTablet": true
     },
+
+    "android": {
+      "package": "com.vagnercpp.ecoleta", 
+      "versionCode": 1,
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"]
+    },
+        
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
+    },
+    
     "updates": {
       "fallbackToCacheTimeout": 0
     },
+    
     "assetBundlePatterns": [
       "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    }
+    ]
   }
 }
