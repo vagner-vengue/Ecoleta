@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Ecoleta",
-    "icon": "./src/assets/mobile_icon_2.png", 
+    "icon": "./src/assets/mobile_icon.png", 
     "version": "1.0.0",
     "orientation": "portrait",
     "slug": "Ecoleta",
@@ -19,7 +19,7 @@
     },
 
     "android": {
-      "package": "com.vagnercpp.ecoleta",
+      "package": "com.vagnercpp.ecoleta", 
       "versionCode": 1,
       "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"]
     },
@@ -27,7 +27,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FFFFFF"
     },
     
     "updates": {
