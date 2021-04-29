@@ -8,6 +8,7 @@ import { SvgUri } from "react-native-svg";
 import * as Location from "expo-location";
 import api from "../../services/api";
 import { getHeaderPublicAccess, getHeaderPublicAccessPropertyOnly } from "../../global/global_functions";
+import ActivityLoader from "../../components/ActivityLoader";
 
 interface Item {
     id: number;
@@ -41,22 +42,26 @@ const Points = () => {
 
     const routeParams = route.params as Params;
 
+    const [showLoadingModal, setShowLoadingModal] = useState<boolean>(true);
+    const [imageLoadedCounter, setImageLoadedCounter] = useState<number>(0);
+        
     // This loads the initial position to be used on the map.
     useEffect(() => {
         async function loadPosition(){
             const { status } = await Location.requestPermissionsAsync();
             
             if (status !== 'granted'){
+                setShowLoadingModal(false);
                 Alert.alert('Ooops...', 'Precisamos da sua permissão para obter a localização.');
                 console.log(status);
                 return;
             }
-
+            
             const location = await Location.getCurrentPositionAsync();
             const { latitude, longitude } = location.coords;
             setInitialPosition([latitude, longitude]);
-        }
-
+        }       
+        
         loadPosition();
     }, []);
 
@@ -101,8 +106,18 @@ const Points = () => {
         }
     }
 
+    function handleItemImageLoaded() {
+        setImageLoadedCounter(imageLoadedCounter + 1);
+        
+        if (items.length === imageLoadedCounter + 1)
+            setShowLoadingModal(false);
+    }
+
     return (
         <>
+            {/* Loading modal will only be showed when showLoadingModal is set to 'true'. */}
+            <ActivityLoader loading={showLoadingModal} />
+
             <View style={styles.container}>
                 <TouchableOpacity onPress={handleNavigationBack}>
                     <Icon name='arrow-left' size={20} color="#34cb79" />
@@ -137,7 +152,7 @@ const Points = () => {
                                     <View style={styles.mapMarkerContainer}>
                                         <Image
                                             style={styles.mapMarkerImage} 
-                                            source={{ uri: point.image_url }} />
+                                            source={{ uri: point.image_url, headers: getHeaderPublicAccessPropertyOnly() }} />
                                         <Text style={styles.mapMarkerTitle}>{point.name}</Text>
                                     </View>
                                 </Marker>
@@ -163,7 +178,7 @@ const Points = () => {
                                 activeOpacity={0.4} 
                                 onPress={() => handleSelectedItem(item.id)}
                             >
-                                <SvgUri width={42} height={42} uri={item.image_url} />
+                                <SvgUri width={42} height={42} uri={item.image_url} onLayout={handleItemImageLoaded} />
                                 <Text>{item.title}</Text>
                             </TouchableOpacity>
                         ))
