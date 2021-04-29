@@ -6,6 +6,7 @@ import { LeafletMouseEvent } from 'leaflet';
 import api from '../../services/api';
 import axios from 'axios';
 import DropZone from "../../components/Dropzone";
+import { getHeaderPublicAccess } from "../../shared/global_functions";
 
 import './styles.css';
 import logo from '../../assets/logo.svg';
@@ -47,7 +48,7 @@ const CreatePoint = () => {
 
     // Loads the item types to be showed on the screen.
     useEffect(() => {
-        api.get('items').then(
+        api.get('items', getHeaderPublicAccess()).then(
             response => {
                 setItems(response.data);
             }
@@ -156,7 +157,7 @@ const CreatePoint = () => {
             data.append('image', selectedFile);
         
         console.log(data);
-        await api.post('points', data);
+        await api.post('points', data, getHeaderPublicAccess());
 
         alert('Ponto de coleta criado!');
 

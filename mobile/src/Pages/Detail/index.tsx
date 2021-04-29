@@ -5,7 +5,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import Constants from "expo-constants";
 import { RectButton } from "react-native-gesture-handler";
 import api from "../../services/api";
-import { getHeaderPublicAccess } from "../../global/global_functions";
+import { getHeaderPublicAccess, getHeaderPublicAccessPropertyOnly } from "../../global/global_functions";
 import * as MailComposer from "expo-mail-composer";
 
 interface Params {
@@ -36,7 +36,7 @@ const Detail = () => {
     const routeParams = route.params as Params;
 
     useEffect(() => {
-        api.get(`points/${routeParams.point_id}`, getHeaderPublicAccess()).then(response => {
+        api.get(`points/${routeParams.point_id}`, getHeaderPublicAccess()).then((response: any) => {
             setData(response.data);
         });
     }, []);
@@ -70,7 +70,7 @@ const Detail = () => {
                     <Icon name='arrow-left' size={20} color="#34cb79" />
                 </TouchableOpacity>
 
-                <Image style={styles.pointImage} source={{ uri: data.point.image_url }} />
+                <Image style={styles.pointImage} source={{ uri: data.point.image_url, headers: getHeaderPublicAccessPropertyOnly() }} />
 
                 <Text style={styles.pointName}> { data.point.name } </Text>
                 <Text style={styles.pointItems}> { data.items.map(i => i.title).join(', ') } </Text>
